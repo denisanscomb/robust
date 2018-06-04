@@ -20,11 +20,11 @@ function onOpen2(){
 function pEv(){
  
   var iEventID = SpreadsheetApp.openById("1sEjzhq96me6aaQLIBqY6Wfgy9D6VrKhtHL9eUoqyT2Q").getSheetByName("Event ID"); // locates Event ID sheet
-  var ePs2 = iEventID.getRange("ad3:ad1111").getValues(); // creates an array of column 30 in Event ID sheet where the holding ID of events that have yet to be QA'd
-  var ePfull = iEventID.getRange("a3:as1111").getValues(); // takes all Event ID and makes it an array
+  var ePs2 = iEventID.getRange("ad3:ad1991").getValues(); // creates an array of column 30 in Event ID sheet where the holding ID of events that have yet to be QA'd
+  var ePfull = iEventID.getRange("a3:as1991").getValues(); // takes all Event ID and makes it an array
   var evQueue = SpreadsheetApp.openById("1sEjzhq96me6aaQLIBqY6Wfgy9D6VrKhtHL9eUoqyT2Q").getSheetByName("Event QA"); // Locates the Event QA sheet
   
-  for (var i=2; i < 1098; i++){
+  for (var i=2; i < 1990; i++){
     
     if(ePs2[i] > 0){
      
@@ -65,10 +65,10 @@ function pEv(){
 function pCopy(){
   
   var iEventID = SpreadsheetApp.openById("1sEjzhq96me6aaQLIBqY6Wfgy9D6VrKhtHL9eUoqyT2Q").getSheetByName("Event ID"); // locates Event ID sheet
-  var ePs = iEventID.getRange("aj3:aj1111").getValues(); // creates an array of column 36 in Event ID sheet where the holding ID of to be drafted events is kept
-  var ePfull = iEventID.getRange("a3:bj1111").getValues();
+  var ePs = iEventID.getRange("aj3:aj1991").getValues(); // creates an array of column 36 in Event ID sheet where the holding ID of to be drafted events is kept
+  var ePfull = iEventID.getRange("a3:bj1991").getValues();
   
-  for (var i=2; i < 1098; i++){
+  for (var i=2; i < 1990; i++){
     
     if(ePs[i] > 0){
      
@@ -103,7 +103,7 @@ function qCopy() {
   var eventIDss = SpreadsheetApp.openById("1sEjzhq96me6aaQLIBqY6Wfgy9D6VrKhtHL9eUoqyT2Q").getSheetByName("Event ID");
   var passEvent = SpreadsheetApp.openById("1sEjzhq96me6aaQLIBqY6Wfgy9D6VrKhtHL9eUoqyT2Q").getSheetByName("Passed Events");
   var cWriters = passEvent.getRange("b2:C102").getValues(); // copywriter IDs
-  var ePfull = eventIDss.getRange("a3:bj1111").getValues(); // takes all Event ID and makes it an array
+  var ePfull = eventIDss.getRange("a3:bj1991").getValues(); // takes all Event ID and makes it an array
   
   for(var i = 0; i < 100; i++){
     
@@ -282,7 +282,7 @@ function uHop(){
   
   var eventIDss = SpreadsheetApp.openById("1sEjzhq96me6aaQLIBqY6Wfgy9D6VrKhtHL9eUoqyT2Q").getSheetByName("Event ID");
   var hopper = SpreadsheetApp.openById("1sEjzhq96me6aaQLIBqY6Wfgy9D6VrKhtHL9eUoqyT2Q").getSheetByName("Hopper");
-  var ePfull = eventIDss.getRange("a3:bj1111").getValues(); // takes all Event ID and makes it an array
+  var ePfull = eventIDss.getRange("a3:bj1991").getValues(); // takes all Event ID and makes it an array
   var qcSearch = hopper.getRange("a2:c400").getValues();
   var swu = SpreadsheetApp.openById("1sEjzhq96me6aaQLIBqY6Wfgy9D6VrKhtHL9eUoqyT2Q").getSheetByName("Sendwithus");
   
@@ -433,12 +433,12 @@ function uHop(){
    
   var eventIDss = SpreadsheetApp.openById("1sEjzhq96me6aaQLIBqY6Wfgy9D6VrKhtHL9eUoqyT2Q").getSheetByName("Event ID");
   var hopper = SpreadsheetApp.openById("1sEjzhq96me6aaQLIBqY6Wfgy9D6VrKhtHL9eUoqyT2Q").getSheetByName("Hopper");
-  var ePfull = eventIDss.getRange("a3:bf1111").getValues(); // takes all Event ID and makes it an array
+  var ePfull = eventIDss.getRange("a3:bf1991").getValues(); // takes all Event ID and makes it an array
   var qcSearch = hopper.getRange("a2:c400").getValues();
   var swu = SpreadsheetApp.openById("1sEjzhq96me6aaQLIBqY6Wfgy9D6VrKhtHL9eUoqyT2Q").getSheetByName("Sendwithus");
   
   
-  for(var i = 0; i < 1098; i++){
+  for(var i = 0; i < 1990; i++){
     
       var drCop = ePfull[i][31]; // looking for any Events in drafted status. 
       var eIDpre = ePfull[i][0];
@@ -504,13 +504,13 @@ function Email(){
   
   
   var eventIDss = SpreadsheetApp.openById("1sEjzhq96me6aaQLIBqY6Wfgy9D6VrKhtHL9eUoqyT2Q").getSheetByName("Event ID");
-  var ePfull = eventIDss.getRange("a3:bf1111").getValues(); // takes all Event ID and makes it an array
+  var ePfull = eventIDss.getRange("a3:bf1990").getValues(); // takes all Event ID and makes it an array
   var swu = SpreadsheetApp.openById("1sEjzhq96me6aaQLIBqY6Wfgy9D6VrKhtHL9eUoqyT2Q").getSheetByName("Sendwithus");
   var renew = swu.getRange("a3:a400");
   renew.clear();
   
   
-  for(var m = 0; m < 1097; m++){
+  for(var m = 0; m < 1990; m++){
     
       var yahoo = ePfull[m][37];
       var eIDpre = ePfull[m][0];
@@ -588,7 +588,7 @@ function SWUclear() {
 function data() {
   
   var eventIDss = SpreadsheetApp.openById("1sEjzhq96me6aaQLIBqY6Wfgy9D6VrKhtHL9eUoqyT2Q").getSheetByName("Event ID");
-  var ePfull = eventIDss.getRange("a3:bf1111").getValues(); // takes all Event ID and makes it an array
+  var ePfull = eventIDss.getRange("a3:bf1991").getValues(); // takes all Event ID and makes it an array
   var users = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("User List"); 
   var user = users.getRange("j2:j36").getValues(); // makes an array of the user list
   
@@ -600,7 +600,7 @@ function data() {
       var count = 0;
       var cPass = 0;
   
-   for(var d = 0; d < 1097; d++){
+   for(var d = 0; d < 1990; d++){
      
      if(ePfull[d][1] == cust){
           
